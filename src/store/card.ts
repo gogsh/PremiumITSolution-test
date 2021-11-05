@@ -3,7 +3,7 @@ import { makeAutoObservable } from 'mobx'
 class Card {
   /** Кол-во денег на карте */
   cash: number = 0
-  private pinCode: number = 1234
+  pinCode: number = 1234
 
   constructor() {
     makeAutoObservable(this)

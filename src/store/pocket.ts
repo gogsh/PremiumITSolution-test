@@ -22,6 +22,9 @@ class Pocket {
       for (const b in banknotes) {
         this.cash[b] = this.cash[b] + banknotes[b]
       }
+      return true
+    } else {
+      return false
     }
   }
 
