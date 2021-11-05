@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import bank from '../../../../store/bank'
 import card from '../../../../store/card'
 
+import { PinCodeLayout, Alert } from './PinCode-style'
+
 const PinCode: React.FC = () => {
   const [inputValue, setInputValue] = useState<number | ''>('')
   const [invalidPin, setInvalidPin] = useState<boolean>(false)
@@ -25,18 +27,20 @@ const PinCode: React.FC = () => {
   }
 
   return (
-    <form>
-      {invalidPin ? <span>Неверный пин-код</span> : null}
-      <input
-        onInput={onInputChange}
-        value={inputValue}
-        placeholder={'Введите пин-код'}
-        maxLength={4}
-      />
-      <button onClick={pinCodeHandler} value={inputValue}>
-        Подтвердить
-      </button>
-    </form>
+    <>
+      {invalidPin ? <Alert>Неверный пин-код</Alert> : null}
+      <PinCodeLayout>
+        <input
+          onInput={onInputChange}
+          value={inputValue}
+          placeholder={'Введите пин-код'}
+          maxLength={4}
+        />
+        <button onClick={pinCodeHandler} value={inputValue}>
+          Подтвердить
+        </button>
+      </PinCodeLayout>
+    </>
   )
 }
 

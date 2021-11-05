@@ -7,7 +7,7 @@ const Success: React.FC = () => {
 
   return (
     <>
-      <h2>Опрация успещно завершена</h2>
+      <h2 className={'Alert_success'}>Операция успешно завершена</h2>
       <button onClick={onCardEnterHandler}>Вернуть карту</button>
     </>
   )

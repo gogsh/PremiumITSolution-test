@@ -13,7 +13,7 @@ const ErrorScreen: React.FC = () => {
 
   return (
     <>
-      <h2>Операция не может быть выполнена</h2>
+      <h2 className={'Alert_error'}>Операция не может быть выполнена</h2>
       <button onClick={anotherAmountHandler}>Внести другую сумму</button>
       <button onClick={cardOutHandler}>Вернуть карту</button>
     </>

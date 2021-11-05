@@ -5,6 +5,8 @@ import bank from '../../store/bank'
 
 import * as Screen from './Screens/index'
 
+import { BankLayout } from './Bank-style'
+
 const Bank: React.FC = observer(() => {
   const renderScreen = (status: BankStatus) => {
     switch (status) {
@@ -25,7 +27,7 @@ const Bank: React.FC = observer(() => {
     }
   }
 
-  return <>{renderScreen(bank.status)}</>
+  return <BankLayout>{renderScreen(bank.status)}</BankLayout>
 })
 
 export default Bank

@@ -7,6 +7,8 @@ import bank from '../../../../store/bank'
 import pocket from '../../../../store/pocket'
 import card from '../../../../store/card'
 
+import { ButtonsContainer } from './CashIn-styles'
+
 const CashOut: React.FC = observer(() => {
   const onCashIn = (e: React.ChangeEvent<any>) => {
     e.preventDefault()
@@ -41,10 +43,12 @@ const CashOut: React.FC = observer(() => {
   }
 
   return (
-    <form>
-      {renderButtons(pocket.cash)}
-      <button onClick={onCashIn}>Подтвердить</button>
-    </form>
+    <>
+      <ButtonsContainer>{renderButtons(pocket.cash)}</ButtonsContainer>
+      <button className={'Button_primary'} onClick={onCashIn}>
+        Подтвердить
+      </button>
+    </>
   )
 })
 
