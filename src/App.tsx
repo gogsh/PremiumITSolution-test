@@ -1,9 +1,12 @@
-function App() {
+import Bank from './Components/Bank/Bank'
+import { observer } from 'mobx-react-lite'
+
+const App: React.FC = observer(() => {
   return (
     <div className='App'>
-      <h1>test</h1>
+      <Bank/>
     </div>
   )
-}
+})
 
 export default App
